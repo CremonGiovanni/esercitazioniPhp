@@ -1,0 +1,4 @@
+paolo;paolo
+giorno;giorno
+ciao;ciao
+uno;uno
