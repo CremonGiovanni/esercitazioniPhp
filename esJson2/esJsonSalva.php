@@ -12,7 +12,6 @@ if (file_exists($filename)&&is_file($filename)) {
     fclose($f);
     $counter = intval($json->{"counter"});
     $counter++;
-    echo $counter;
     $oggetti = $json ->{"oggetti"};
     $oggetti[] = createJson($counter);
     $arrayJSON = [
