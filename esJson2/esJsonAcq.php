@@ -13,14 +13,15 @@
             
             $counter=$json->{"counter"};
             $oggetti = $json ->{"oggetti"};
-            $arrayJSON = [
-                "counter" => $counter,
-                "oggetti" => $oggetti
-            ];
+
             for($i=0;$i<$counter;$i++){
-                if($oggetti[$i]==$_GET["acq"]){
+                if($oggetti[$i]->{"nome"}==$_GET["acq"]){
                     if($oggetti[$i]->{"disponibilita"}=="si"){
                         $oggetti[$i]->{"quantita"}-=$_GET["number"];
+                        $arrayJSON = [
+                            "counter" => $counter,
+                            "oggetti" => $oggetti
+                        ];
                         $f = fopen($filename, "w");
                         fwrite($f, json_encode($arrayJSON));
                          fclose($f);
